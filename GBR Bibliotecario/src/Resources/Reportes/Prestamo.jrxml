@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Prestamo" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fee6807d-a7d6-42db-bd41-769e2bc2a886">
+	<property name="ireport.zoom" value="1.4641000000000015"/>
+	<property name="ireport.x" value="26"/>
+	<property name="ireport.y" value="188"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM tblprestamo;]]>
+	</queryString>
+	<field name="pid" class="java.lang.Integer"/>
+	<field name="lecdni" class="java.lang.String"/>
+	<field name="lcodigo" class="java.lang.String"/>
+	<field name="pfecha" class="java.sql.Date"/>
+	<background>
+		<band height="802" splitType="Stretch">
+			<image>
+				<reportElement uuid="77aab333-5e1a-4981-bb72-a668bbba2ad7" mode="Opaque" x="70" y="157" width="397" height="528"/>
+				<imageExpression><![CDATA["E:\\Compile\\Java\\Java Eclipse\\GBR Bibliotecario 1.1\\src\\Vista\\Imagenes\\logoColegio.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="dfffa1cf-af35-4ab8-8b8f-2897f2033969" x="162" y="7" width="199" height="64"/>
+				<textElement textAlignment="Center">
+					<font fontName="Andalus" size="20" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[CONSOLIDADO DE PRESTAMOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="3bda5a0a-537a-4246-ac3e-dcd8ded2a1e1" x="307" y="5" width="40" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Hasta:]]></text>
+			</staticText>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z">
+				<reportElement uuid="37dcffa0-c2ff-4854-bb16-4093c69d51f7" x="361" y="4" width="140" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="dd4db467-6564-4a24-a9d0-2f3d0ef8ec88" x="28" y="3" width="42" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Desde: ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="b896eb57-332e-48df-9d22-eb41663fd8bd" x="16" y="5" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="72371210-5e5a-4725-88b6-61bd55f132f3" x="272" y="1" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Libro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1c9568e6-3c6d-4e42-9688-7e26a4957160" x="147" y="1" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dni Lector]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5bf0ade4-d6b8-4ad8-a219-0241f97c0a97" x="422" y="1" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Prestamo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement uuid="4b547538-d522-4e60-8f75-ad7206693c76" x="16" y="2" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="eb654c5d-621c-421e-a58d-e23a35ce6383" x="272" y="3" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{lcodigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="066e9615-851a-447f-ae8d-ac0c31618c67" x="147" y="2" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{lecdni}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="663f05d5-e67a-452e-9e8e-023414ab9736" x="422" y="3" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pfecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement uuid="c28825a1-d2d2-416c-87c4-708b629a27ff" x="534" y="0" width="21" height="23"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2ab271fc-2d7d-4b5b-9e9a-be38c0077dbf" x="488" y="0" width="34" height="23"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Pag. :]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="28" splitType="Stretch"/>
+	</summary>
+</jasperReport>
